@@ -160,6 +160,7 @@
     <Content Include="blog.aspx" />
     <Content Include="signup.aspx" />
     <Content Include="signin.aspx" />
+    <Content Include="Search.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -200,6 +201,13 @@
     </Compile>
     <Compile Include="signin.aspx.designer.cs">
       <DependentUpon>signin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -17,9 +17,6 @@ namespace Project1
 
         protected void Session_Start(object sender, EventArgs e)
         {
-            Session["username"] = "";
-            Session["email"] = "";
-            Session["password"] = "";
             Session["login"] = null;
         }
 
