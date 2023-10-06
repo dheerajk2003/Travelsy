@@ -27,6 +27,7 @@
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
+    <link href="assets/css/Search.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet">
     <asp:ContentPlaceHolder ID="head" runat="server">
         
