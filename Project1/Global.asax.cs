@@ -18,6 +18,7 @@ namespace Project1
         protected void Session_Start(object sender, EventArgs e)
         {
             Session["login"] = null;
+            Session["id"] = null;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

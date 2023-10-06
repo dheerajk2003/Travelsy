@@ -43,6 +43,7 @@
         <ol>
           <li><a href="index.aspx">Home</a></li>
           <li>Blog</li>
+            <li><a href="CreateBlog.aspx">Create</a></li>
         </ol>
         <h2>Blog</h2>
 
@@ -193,9 +194,19 @@
 
               <h3 class="sidebar-title">Search</h3>
               <div class="sidebar-item search-form">
-                <form action="">
+                <form>
                   <input type="text">
                   <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+                <form runat="server" class="blogForm">
+                    <div class="searchDiv">
+                        <asp:DropDownList ID="DdlStates" runat="server" OnSelectedIndexChanged="DdlStates_SelectedIndexChanged" AutoPostBack="true">
+                            
+                        </asp:DropDownList>
+                        <asp:DropDownList ID="DdlCities" runat="server">
+                            
+                        </asp:DropDownList>
+                    </div>
                 </form>
               </div><!-- End sidebar search formn-->
 

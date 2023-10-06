@@ -36,7 +36,10 @@ namespace Project1
                 cmd.ExecuteNonQuery();
             }
             catch (Exception ex) { }
-            finally { }
+            finally { 
+                con.Close();
+                Response.Redirect("signin.aspx");
+            }
         }
     }
 }

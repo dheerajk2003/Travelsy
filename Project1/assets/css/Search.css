@@ -4,3 +4,16 @@
 .searchDiv{
     margin:10%;
 }
+
+.blogForm{
+    margin:0;
+    padding:0;
+
+}
+
+.blogForm div select{
+    padding:10px;
+    border:1px solid gray;
+    border-radius: 10px;
+
+}

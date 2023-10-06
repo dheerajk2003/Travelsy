@@ -20,7 +20,7 @@ namespace Project1
 
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
-            string query = "Select * from tblLogin where _useremail = '"+txtemail.Text+"' and _userpass = '"+txtPass.Text+"'";
+            string query = "Select _id,_useremail, _userpass from tblLogin where _useremail = '"+txtemail.Text+"'";
             DataTable dt = new DataTable();
             SqlDataAdapter adpt;
             try
@@ -30,9 +30,15 @@ namespace Project1
                 adpt.Fill(dt);
                 if(dt.Rows.Count > 0)
                 {
-                    Response.Write(s: "<script>alert('valid user');</script>");
-                    Session["login"] = 1;
-                    Response.Redirect("blog.aspx");
+                    string txtEncPass = dt.Rows[0]["_userpass"].ToString();
+                    byte[] bytes = System.Convert.FromBase64String(txtEncPass);
+                    string realpass = System.Text.Encoding.UTF8.GetString(bytes);
+                    if(realpass == txtPass.Text)
+                    {
+                        Session["login"] = 1;
+                        Session["id"] = dt.Rows[0]["_id"].ToString();
+                        Response.Redirect("blog.aspx");
+                    }
                 }
                 else
                 {

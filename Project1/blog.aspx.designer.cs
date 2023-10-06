@@ -13,5 +13,23 @@ namespace Project1
 
     public partial class blog
     {
+
+        /// <summary>
+        /// DdlStates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlStates;
+
+        /// <summary>
+        /// DdlCities control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlCities;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/home.Master" AutoEventWireup="true" CodeBehind="signup.aspx.cs" Inherits="Project1.signup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/home.Master" AutoEventWireup="true" CodeBehind="CreateBlog.aspx.cs" Inherits="Project1.CreateBlog" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,7 +7,7 @@
 
     <div class="section-title">
       <%--<h2>Registratin</h2>--%>
-      <h3>Sign <span>Up</span></h3>
+      <h3>Make <span>Blog</span></h3>
       <%--<p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>--%>
     </div>
 
@@ -46,33 +46,41 @@
         <form id="formReg" runat="server">
           <div class="row">
             <div class=" form-group mt-3">
-                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" placeholder="Your Name" required></asp:TextBox>
+                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" placeholder="Place Name" required></asp:TextBox>
               <%--<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>--%>
             </div>
             <div class=" form-group mt-3">
               <%--<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>--%>
-                <asp:TextBox TextMode="Email" ID="txtemail" runat="server" CssClass="form-control" placeholder="Your Email" required></asp:TextBox>
+                <asp:TextBox ID="txtdesc" runat="server" TextMode="MultiLine" CssClass="form-control" placeholder="Description" required></asp:TextBox>
             </div>
             <div class="form-group mt-3">
                 <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
-                <asp:TextBox TextMode="Password" ID="txtPass" runat="server" CssClass="form-control" placeholder="Password" required></asp:TextBox>
+                <asp:TextBox ID="txtState" runat="server" CssClass="form-control" placeholder="State" required></asp:TextBox>
+            </div>
+            <div class="form-group mt-3">
+                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
+                <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" placeholder="City" required></asp:TextBox>
+            </div>
+            <div class="form-group mt-3">
+                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
+                <asp:FileUpload ID="imgPlace" runat="server" CssClass="form-control" placeholder="Place Image" required />
             </div>
           </div>
           
           <%--<div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
           </div>--%>
-          <div class="my-3">
+         <%-- <div class="my-3">--%>
             <%--<div class="loading">Loading</div>--%>
-            <div class="error-message"></div>
+            <%--<div class="error-message"></div>--%>
             <%--<div class="sent-message">Your message has been sent. Thank you!</div>--%>
-          </div>
+         <%-- </div>
             <div class="regloglink">
                 <p>Already have an account? </p><a href="signin.aspx">login now</a>
-            </div>
+            </div>--%>
           <div class="text-center">
               <%--<button type="submit">Send Message</button>--%>
-              <asp:Button ID="btnsubmit" runat="server" CssClass="btnsubmit" OnClick="btnsubmit_Click" style="background: #e43c5c;border: 0;padding: 10px 28px;color: #fff; transition: 0.4s;border-radius: 50px;" Text="Register" />
+              <asp:Button ID="btnsubmit" runat="server" CssClass="btnsubmit" OnClick="btnsubmit_Click" style="background: #e43c5c;border: 0;padding: 10px 28px;color: #fff; transition: 0.4s;border-radius: 50px;" Text="Upload" />
 
           </div>
             
@@ -84,5 +92,4 @@
 
   </div>
 </section><!-- End Contact Section -->
-
 </asp:Content>

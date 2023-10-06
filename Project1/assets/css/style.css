@@ -1752,11 +1752,11 @@ section {
   margin-bottom: 30px;
 }
 
-.blog .sidebar .search-form form {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 3px 10px;
-  position: relative;
+.blog .sidebar .search-form form:first-child {
+    background: #000;
+    border: 1px solid #ddd;
+    padding: 3px 10px;
+    position: relative;
 }
 
 .blog .sidebar .search-form form input[type=text] {
