@@ -61,6 +61,10 @@
                 <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
                 <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" placeholder="City" required></asp:TextBox>
             </div>
+              <div class="form-group mt-3">
+                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
+                <asp:TextBox ID="txtMaps" runat="server" CssClass="form-control" placeholder="Maps link" required></asp:TextBox>
+            </div>
             <div class="form-group mt-3">
                 <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
                 <asp:FileUpload ID="imgPlace" runat="server" CssClass="form-control" placeholder="Place Image" required />

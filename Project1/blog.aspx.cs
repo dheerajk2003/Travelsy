@@ -51,8 +51,6 @@ namespace Project1
                 catch { }
                 finally
                 {
-                    Response.Write(DdlStates.SelectedItem.Text);
-                    Response.Write(DdlStates.SelectedItem.Value);
                     con.Close();
                 }
             }
@@ -65,7 +63,7 @@ namespace Project1
                 con.Open();
                 SqlDataAdapter adpt;
                 DataTable dt = new DataTable();
-                string query = "select distinct _city, _id from tblPlaces where _state = '" + DdlStates.SelectedItem.Text.ToString() + "'";
+                string query = "select DISTINCT _city from tblPlaces where _state = '" + DdlStates.SelectedItem.Text.ToString() + "'";
                 adpt = new SqlDataAdapter(query, con);
                 adpt.Fill(dt);
                 if (dt.Rows.Count > 0)
@@ -75,7 +73,7 @@ namespace Project1
                     {
                         ListItem item = new ListItem();
                         item.Text = dt.Rows[i]["_city"].ToString();
-                        item.Value = dt.Rows[i]["_id"].ToString();
+                        item.Value = dt.Rows[i]["_city"].ToString();
                         DdlCities.Items.Add(item);
                     }
                 }
