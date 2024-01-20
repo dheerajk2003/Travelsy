@@ -11,7 +11,15 @@ namespace Project1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string cookie = HttpContext.Current.User.Identity.Name;
+            if (cookie == null || cookie == "")
+            {
+                registerLabel.Text = "<a class=\"nav-link scrollto\" href=\"signup.aspx\">Sign Up</a>";
+            }
+            else
+            {
+                registerLabel.Text = "<a class=\"nav-link scrollto\" href=\"Dashboard.aspx\">Dashboard</a>";
+            }
         }
     }
 }

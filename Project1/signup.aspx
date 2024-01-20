@@ -46,16 +46,22 @@
         <form id="formReg" runat="server">
           <div class="row">
             <div class=" form-group mt-3">
-                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" placeholder="Your Name" required></asp:TextBox>
-              <%--<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>--%>
+                <asp:TextBox ID="txtname" runat="server" CssClass="form-control" placeholder="Your Name" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvname" runat="server" ControlToValidate="txtname" ErrorMessage="*" ForeColor="Red" ValidationGroup="registration" ></asp:RequiredFieldValidator>
             </div>
             <div class=" form-group mt-3">
-              <%--<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>--%>
-                <asp:TextBox TextMode="Email" ID="txtemail" runat="server" CssClass="form-control" placeholder="Your Email" required></asp:TextBox>
+                <asp:TextBox ID="txtemail" runat="server" CssClass="form-control" placeholder="Your Email" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtemail" ErrorMessage="*" ForeColor="Red" ValidationGroup="registration" ></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="revemail" runat="server" ControlToValidate="txtemail" ForeColor="Red" ValidationGroup="registration" ErrorMessage="Not an Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             </div>
             <div class="form-group mt-3">
-                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
-                <asp:TextBox TextMode="Password" ID="txtPass" runat="server" CssClass="form-control" placeholder="Password" required></asp:TextBox>
+                <asp:TextBox TextMode="Password" ID="txtPass" runat="server" CssClass="form-control" placeholder="Password" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass" ErrorMessage="*" ForeColor="Red" ValidationGroup="registration" ></asp:RequiredFieldValidator>
+            </div>
+            <div class="form-group mt-3">
+                <asp:TextBox TextMode="Password" ID="txtCnfPass" runat="server" CssClass="form-control" placeholder="Confirm Password" ></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvCnfPass" runat="server" ControlToValidate="txtPass" ErrorMessage="*" ForeColor="Red" ValidationGroup="registration" ></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="cvPass" runat="server" ControlToCompare="txtPass" ControlToValidate="txtCnfPass" ErrorMessage="Password must be same" ValidationGroup="registration" ForeColor="Red"></asp:CompareValidator>
             </div>
           </div>
           
@@ -72,7 +78,7 @@
             </div>
           <div class="text-center">
               <%--<button type="submit">Send Message</button>--%>
-              <asp:Button ID="btnsubmit" runat="server" CssClass="btnsubmit" OnClick="btnsubmit_Click" style="background: #e43c5c;border: 0;padding: 10px 28px;color: #fff; transition: 0.4s;border-radius: 50px;" Text="Register" />
+              <asp:Button ID="btnsubmit" runat="server" CssClass="btnsubmit" OnClick="btnsubmit_Click" style="background: #e43c5c;border: 0;padding: 10px 28px;color: #fff; transition: 0.4s;border-radius: 50px;" Text="Register" ValidationGroup="registration" />
 
           </div>
             

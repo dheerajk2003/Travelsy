@@ -52,131 +52,82 @@
 
     <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
+        <form runat="server">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
 
           <div class="col-lg-8 entries">
 
-            <article class="entry">
+              <%--<img src="assets/img/goingMerry.jpg" alt="no image" />--%>
+               <%--<asp:ScriptManager ID="scptMngr" runat="server"></asp:ScriptManager>
+            <div>
+   
+    <asp:UpdatePanel ID="UpdtMngr" runat="server">
+        <ContentTemplate>
+            <asp:Label ID="lbltext" runat="server" Text="hello"></asp:Label>
+            <asp:Button ID="btnuts" runat="server" Text="click" OnClick="btnuts_Click" />
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</div>
 
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+              <div>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:Label ID="lbltext_1" runat="server" Text="hello"></asp:Label>
+            <asp:Button ID="Button1" runat="server" Text="click" OnClick="btnuts_Click" />
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</div>
 
-              <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
-              </h2>
+              <div>
+    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+        <ContentTemplate>
+            <asp:Label ID="lbltext_2" runat="server" Text="hello"></asp:Label>
+            <asp:Button ID="Button2" runat="server" Text="click" OnClick="btnuts_Click" />
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</div>--%>
+            <asp:ScriptManager ID="scpt" runat="server"></asp:ScriptManager>
+            <asp:Repeater ID="rptBlogs" runat="server">
+                <ItemTemplate>
+                    <article class="entry">
+                        
+                        
+                        <div class="entry-img">
+                        <img src =' <%# "images/" + Eval("_img") %>' alt="not found" class="img-fluid">
+                        </div>
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
+                        <h2 class="entry-title">
+                            <asp:Label ID="txtPlaceName" runat="server" Text='<%#Eval("_name") %>' ></asp:Label>
+                        </h2>
 
-              <div class="entry-content">
-                <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta.
-                  Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>
+                        <div class="entry-meta">
+                        <ul>
+                            <asp:UpdatePanel ID="updt" runat="server">
+                            <ContentTemplate>
+                            <li class="d-inline-flex align-items-center">
+                                    <asp:HiddenField ID="idHidden" runat="server" ClientIDMode="Static" Value='<%# Eval("_bid") %>' />
+                                    <%--onClientClick="return false"--%>
+                                    <asp:Label ID="numLikes" runat="server" ClientIDMode="Static"><%# Eval("_likes") %></asp:Label>
+                                    <span>Likes</span>
+                            </li>
+                            <li class="d-inline-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><asp:Label ID="blogmTime" runat="server"><%# Eval("_dateTime") %></asp:Label></a></li>
+                            </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </ul>
+                        </div>
 
-            </article><!-- End blog entry -->
+                        <div class="entry-content">
+                        <asp:Label ID="txtPlaceDesc" runat="server" Text='<%#Eval("_description") %>' ></asp:Label>
+                        <div class="read-more">
+                            <a href="SingleBlog.aspx?idb=<%#Eval("_bid") %>">Read More</a>
+                        </div>
+                        </div>
 
-            <article class="entry">
-
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  Incidunt voluptate sit temporibus aperiam. Quia vitae aut sint ullam quis illum voluptatum et. Quo libero rerum voluptatem pariatur nam.
-                  Ad impedit qui officiis est in non aliquid veniam laborum. Id ipsum qui aut. Sit aliquam et quia molestias laboriosam. Tempora nam odit omnis eum corrupti qui aliquid excepturi molestiae. Facilis et sint quos sed voluptas. Maxime sed tempore enim omnis non alias odio quos distinctio.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <article class="entry">
-
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Possimus soluta ut id suscipit ea ut. In quo quia et soluta libero sit sint.</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  Aut iste neque ut illum qui perspiciatis similique recusandae non. Fugit autem dolorem labore omnis et. Eum temporibus fugiat voluptate enim tenetur sunt omnis.
-                  Doloremque est saepe laborum aut. Ipsa cupiditate ex harum at recusandae nesciunt. Ut dolores velit.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <article class="entry">
-
-              <div class="entry-img">
-                <img src="assets/img/blog/blog-4.jpg" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="blog-single.html">Non rem rerum nam cum quo minus. Dolor distinctio deleniti explicabo eius exercitationem.</a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                  Aspernatur rerum perferendis et sint. Voluptates cupiditate voluptas atque quae. Rem veritatis rerum enim et autem. Saepe atque cum eligendi eaque iste omnis a qui.
-                  Quia sed sunt. Ea asperiores expedita et et delectus voluptates rerum. Id saepe ut itaque quod qui voluptas nobis porro rerum. Quam quia nesciunt qui aut est non omnis. Inventore occaecati et quaerat magni itaque nam voluptas. Voluptatem ducimus sint id earum ut nesciunt sed corrupti nemo.
-                </p>
-                <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>
-
-            </article><!-- End blog entry -->
+                    </article><!-- End blog entry -->
+                </ItemTemplate>
+            </asp:Repeater>
 
             <div class="blog-pagination">
               <ul class="justify-content-center">
@@ -194,20 +145,22 @@
 
               <h3 class="sidebar-title">Search</h3>
               <div class="sidebar-item search-form">
-                <form>
-                  <input type="text">
-                  <button type="submit"><i class="bi bi-search"></i></button>
-                </form>
-                <form runat="server" class="blogForm">
+                <%--<form>--%>
+                  <%--<input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>--%>
+                  <asp:TextBox runat="server" ID="txtSearchBlog" placeholder="Search Place"></asp:TextBox>
+                  <asp:Button runat="server" ID="btnSearchBlog" OnClick="btnSearchBlog_Click" Text="Srch" />
+                <%--</form>--%>
+                <%--<form runat="server" class="blogForm">--%>
                     <div class="searchDiv">
-                        <asp:DropDownList ID="DdlStates" runat="server" OnSelectedIndexChanged="DdlStates_SelectedIndexChanged" AutoPostBack="true">
+                        <asp:DropDownList ID="DdlStates" runat="server" OnSelectedIndexChanged="DdlStates_SelectedIndexChanged" AutoPostBack="true" placeholder="State">
                             
                         </asp:DropDownList>
-                        <asp:DropDownList ID="DdlCities" runat="server">
-                            
+                        <asp:DropDownList ID="DdlCities" runat="server" placeholder="City" OnSelectedIndexChanged="DdlCities_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem ID="Licity" runat="server" placeholder="None" />
                         </asp:DropDownList>
                     </div>
-                </form>
+                <%--</form>--%>
               </div><!-- End sidebar search formn-->
 
               <h3 class="sidebar-title">Categories</h3>
@@ -280,6 +233,7 @@
         </div>
 
       </div>
+        </form>
     </section><!-- End Blog Section -->
 
   </main><!-- End #main -->

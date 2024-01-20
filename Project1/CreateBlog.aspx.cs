@@ -25,25 +25,37 @@ namespace Project1
         
         public void UploadBlg()
         {
-            string query = "insert into tblPlaces(_id,_name,_description,_state,_city,_mapsAddress) values(@id,@place,@desc,@state,@city,@maps)";
-            SqlCommand cmd = new SqlCommand(query, con);
+            //string query = "insert into tblPlaces(_id,_name,_description,_state,_city,_tips,_mapsAddress) values(@id,@place,@desc,@state,@city,@tips,@maps)";
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spCreateBlog";
+            cmd.Connection = con;
             try
             {
+                string path = Server.MapPath("~/images/");
+                imgPlace.SaveAs(path + imgPlace.FileName);
                 con.Open();
                 cmd.Parameters.AddWithValue("@id", Session["id"]);
                 cmd.Parameters.AddWithValue("@place",txtname.Text);
                 cmd.Parameters.AddWithValue("@desc",txtdesc.Text);
                 cmd.Parameters.AddWithValue("@state",txtState.Text);
                 cmd.Parameters.AddWithValue("@city",txtCity.Text);
+                cmd.Parameters.AddWithValue("@tips", txttips.Text);
                 cmd.Parameters.AddWithValue("@maps", txtMaps.Text);
-                cmd.ExecuteNonQuery();
-                Response.Write("<script>alert('Blog created successfully')</script>");
+                cmd.Parameters.AddWithValue("@img", imgPlace.FileName);
+                if(cmd.ExecuteNonQuery() > 0)
+                {
+                    Response.Write("<script>alert('Blog created successfully')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Error occured while uploading')</script>");
+                }
             }
             catch(Exception ex) 
             {
-                Response.Write(ex.ToString());
-                Response.Write(ex.Message);
-                Console.WriteLine(ex.Message);    
+                Console.WriteLine(ex.Message);
+                Response.Write("<script>alert('Error occured while uploading')</script>");
             }
             finally 
             { 

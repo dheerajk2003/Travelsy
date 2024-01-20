@@ -4,7 +4,9 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -18,26 +20,69 @@ namespace Project1
 
         }
 
+        protected void WriteCk(int _id)
+        {
+            try 
+            {
+                //FormsAuthentication.RedirectFromLoginPage(_id.ToString(), false);
+                FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                    1,
+                    _id.ToString(),
+                    DateTime.Now,
+                    DateTime.Now.AddMinutes(30),
+                    true,
+                    ""
+                );
+
+                string encCk = FormsAuthentication.Encrypt(ticket);
+
+                HttpCookie ck = new HttpCookie(FormsAuthentication.FormsCookieName , encCk);
+
+                ck.Expires = ticket.Expiration;
+
+                ck.Path = FormsAuthentication.FormsCookiePath;
+
+                Response.Cookies.Add( ck );
+
+                Response.Redirect( "blog.aspx" );
+            } 
+            catch(Exception ex) 
+            {
+                Response.Write("<script>alert('error' + " + ex.Message + ") </script");
+            }
+        }
+
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
-            string query = "Select _id,_useremail, _userpass from tblLogin where _useremail = '"+txtemail.Text+"'";
+            //string query = "Select _id,_useremail, _userpass from tblLogin where _useremail = '"+txtemail.Text+"'";
             DataTable dt = new DataTable();
             SqlDataAdapter adpt;
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spLogin";
+            cmd.Connection = con;
             try
             {
                 con.Open();
-                adpt = new SqlDataAdapter(query, con);
+                //adpt = new SqlDataAdapter(query, con);
+                cmd.Parameters.AddWithValue("@email", txtemail.Text);
+                adpt = new SqlDataAdapter(cmd);
                 adpt.Fill(dt);
                 if(dt.Rows.Count > 0)
                 {
                     string txtEncPass = dt.Rows[0]["_userpass"].ToString();
-                    byte[] bytes = System.Convert.FromBase64String(txtEncPass);
-                    string realpass = System.Text.Encoding.UTF8.GetString(bytes);
-                    if(realpass == txtPass.Text)
+                    //byte[] bytes = System.Convert.FromBase64String(txtEncPass);
+                    //string realpass = System.Text.Encoding.UTF8.GetString(bytes);
+                    if(txtEncPass == txtPass.Text)
                     {
-                        Session["login"] = 1;
+                        //Session["login"] = Convert.ToInt32(dt.Rows[0]["_id"]);
                         Session["id"] = dt.Rows[0]["_id"].ToString();
+                        WriteCk(Convert.ToInt16(dt.Rows[0]["_id"]));
                         Response.Redirect("blog.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('Invalid Password');</script>");
                     }
                 }
                 else
@@ -47,7 +92,7 @@ namespace Project1
             }
             catch(Exception ex)
             {
-                Response.Write(ex.Message);
+                Response.Write("<script>alert("+ex.Message+") </script");
             }
             finally { con.Close(); }
         }

@@ -43,30 +43,27 @@
 
       <div class="col-lg-8 mt-5 mt-lg-0 w-6/12">
 
-        <form id="formReg" runat="server">
+        <form ID="formReg" runat="server">
           <div class="row">
             <div class=" form-group mt-3">
                 <asp:TextBox ID="txtname" runat="server" CssClass="form-control" placeholder="Place Name" required></asp:TextBox>
-              <%--<input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>--%>
             </div>
             <div class=" form-group mt-3">
-              <%--<input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>--%>
                 <asp:TextBox ID="txtdesc" runat="server" TextMode="MultiLine" CssClass="form-control" placeholder="Description" required></asp:TextBox>
             </div>
             <div class="form-group mt-3">
-                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
                 <asp:TextBox ID="txtState" runat="server" CssClass="form-control" placeholder="State" required></asp:TextBox>
             </div>
             <div class="form-group mt-3">
-                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
                 <asp:TextBox ID="txtCity" runat="server" CssClass="form-control" placeholder="City" required></asp:TextBox>
             </div>
-              <div class="form-group mt-3">
-                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
+            <div class="form-group mt-3">
+                <asp:TextBox ID="txttips" runat="server" CssClass="form-control" placeholder="Some Tips"></asp:TextBox>
+            </div>
+            <div class="form-group mt-3">
                 <asp:TextBox ID="txtMaps" runat="server" CssClass="form-control" placeholder="Maps link" required></asp:TextBox>
             </div>
             <div class="form-group mt-3">
-                <%--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>--%>
                 <asp:FileUpload ID="imgPlace" runat="server" CssClass="form-control" placeholder="Place Image" required />
             </div>
           </div>

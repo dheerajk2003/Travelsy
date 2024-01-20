@@ -21,26 +21,23 @@
       <div class="section-title">
         <h2>About</h2>
         <h3>Learn More <span>About Us</span></h3>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        <p>At <a href="index.aspx">Travelsy</a>, we are passionate storytellers and adventure seekers, dedicated to capturing the essence of travel.</p>
       </div>
 
       <div class="row content">
         <div class="col-lg-6">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+            Our team comprises travel enthusiasts who share a common love for exploring the world's wonders. 
           </p>
           <ul>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            <li><i class="ri-check-double-line"></i> Our team consists of avid travelers and storytellers</li>
+            <li><i class="ri-check-double-line"></i> Our team bring skills that create seamless platform for travel.</li>
+            <li><i class="ri-check-double-line"></i>  We are committed to ensuring your travel blogging experience is exceptional</li>
           </ul>
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0">
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+             Through vivid narratives, stunning imagery, and genuine experiences, we aim to inspire fellow travelers to embark on unforgettable journeys. Join us in celebrating the beauty of diverse cultures, scenic landscapes, and the thrill of wanderlust..
           </p>
           <a href="#" class="btn-learn-more">Learn More</a>
         </div>
@@ -63,32 +60,32 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <h4 class="title"><a href="">Blog Creation</a></h4>
+            <p class="description">Create your personalized travel blog with ease. Share your travel tales, upload captivating images.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="bx bx-file"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            <h4 class="title"><a href="">Image Gallery</a></h4>
+            <p class="description">Showcase your travel experiences through a visually appealing image gallery.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            <h4 class="title"><a href="">Travel Tips</a></h4>
+            <p class="description">Access a treasure trove of travel tips and recommendations.</p>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box">
             <div class="icon"><i class="bx bx-world"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <h4 class="title"><a href="">Location Tagging</a></h4>
+            <p class="description"> Let your readers explore the exact locations where your memorable moments were created.</p>
           </div>
         </div>
 
@@ -185,7 +182,7 @@
 
       <div class="text-center">
         <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p> We are committed to ensuring your travel blogging experience is exceptional. Our dedicated team works tirelessly to provide innovative features, user-friendly interfaces, and unparalleled support for your blogging journey.</p>
         <a class="cta-btn" href="#">Call To Action</a>
       </div>
 
@@ -198,7 +195,7 @@
 
       <div class="section-title">
         <h2>Portfolio</h2>
-        <h3>Check our <span>Portfolio</span></h3>
+        <h3>Check our <span>Blogs</span></h3>
         <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
       </div>
 
@@ -216,7 +213,7 @@
       <div class="row portfolio-container">
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy6.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>App 1</h4>
             <p>App</p>
@@ -226,7 +223,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy3.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>Web 3</h4>
             <p>Web</p>
@@ -236,7 +233,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy7.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>App 2</h4>
             <p>App</p>
@@ -246,7 +243,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy2.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>Card 2</h4>
             <p>Card</p>
@@ -256,7 +253,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy5.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>Web 2</h4>
             <p>Web</p>
@@ -266,7 +263,7 @@
         </div>
 
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+          <img src="assets/img/portfolio/traversy8.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>App 3</h4>
             <p>App</p>
@@ -275,7 +272,7 @@
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+<%--        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
           <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
           <div class="portfolio-info">
             <h4>Card 1</h4>
@@ -303,7 +300,7 @@
             <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
             <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
           </div>
-        </div>
+        </div>--%>
 
       </div>
 
@@ -473,8 +470,8 @@
               </div>
             </div>
             <div class="member-info">
-              <h4>Walter White</h4>
-              <span>Chief Executive Officer</span>
+              <h4>Dheeraj Khatri</h4>
+              <%--<span>Chief Executive Officer</span>--%>
             </div>
           </div>
         </div>
@@ -491,8 +488,8 @@
               </div>
             </div>
             <div class="member-info">
-              <h4>Sarah Jhonson</h4>
-              <span>Product Manager</span>
+              <h4>Aryan Poonia</h4>
+              <%--<span>Product Manager</span>--%>
             </div>
           </div>
         </div>
@@ -509,8 +506,8 @@
               </div>
             </div>
             <div class="member-info">
-              <h4>William Anderson</h4>
-              <span>CTO</span>
+              <h4>Vidhan Mertiya</h4>
+              <%--<span>CTO</span>--%>
             </div>
           </div>
         </div>
@@ -527,8 +524,8 @@
               </div>
             </div>
             <div class="member-info">
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
+              <h4>Harsh Satoliya</h4>
+              <%--<span>Accountant</span>--%>
             </div>
           </div>
         </div>
