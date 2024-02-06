@@ -58,6 +58,19 @@ namespace Project1
                 Response.Write("<script>console.log("+btn.CommandArgument.ToString()+")</script>");
                 try
                 {
+                    string getImage = "select _img from tblPlaces where _bid = " + btn.CommandArgument.ToString() + " ";
+                    con.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(getImage, con);
+                    adapter.Fill(dt);
+                    if(dt.Rows.Count > 0)
+                    {
+                        string path = Server.MapPath("~/images/");
+                        string delImg = String.Concat(path, dt.Rows[0][0]);
+                        System.IO.File.Delete(delImg);
+                    }
+                    con.Close();
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
                     con.Open();
                     string delQuery = "delete from tblPlaces where _bid = " + btn.CommandArgument.ToString() + " ";
                     SqlCommand cmd = new SqlCommand();
@@ -70,7 +83,9 @@ namespace Project1
                     Response.Redirect(Request.Url.AbsoluteUri, false);
                     HttpContext.Current.ApplicationInstance.CompleteRequest();
                 }
-                catch (Exception ex) { }
+                catch (Exception ex) {
+
+                }
             }
         }
 

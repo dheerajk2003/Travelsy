@@ -18,7 +18,7 @@ namespace Project1
             }
             else
             {
-                registerLabel.Text = "<a class=\"nav-link scrollto\" href=\"Dashboard.aspx\">Dashboard</a>";
+                registerLabel.Text = "<a class=\"nav-link scrollto\" href=\"Dashboard.aspx\"><img src='assets/img/profileIcon.png' style='height: 2rem; ' /></a>";
             }
         }
     }

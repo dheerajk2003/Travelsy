@@ -62,9 +62,9 @@
                     <div class="w-25 border border-1 border-dark">
                         <p class="text-wrap text-truncate">Location</p>
                     </div>
-                    <div class="w-25 d-flex flex-column justify-content-around align-items-center border border-1 border-dark">
-                        <p class="w-25 bx-border-radius redColor border-0 rounded-1 m-0">Edit</p>
-                        <p class="w-25 bx-border-radius redColor border-0 rounded-1 m-0">Delete</p>
+                    <div class="w-25 d-flex flex-row justify-content-center align-items-center gap-2 border border-1 border-dark text-white">
+                        <p class="w-25 redColor border-0 rounded-1 m-0">Edit</p>
+                        <p class="w-25 redColor border-0 rounded-1 m-0">Delete</p>
                     </div>
                 </div>
             </div>
@@ -116,8 +116,11 @@
                             <div class="w-25 border border-1 border-dark">
                                 <p class="text-wrap text-truncate"><%# Eval("_mapsAddress") %></p>
                             </div>
-                            <div class="w-25 d-flex flex-column justify-content-around align-items-center border border-1 border-dark">
-                                <asp:Button Style="background-color: #e43c5c" runat="server" ID="btnEdit" Text="Edit" OnClick="btnEdit_Click" class="w-25 text-white bx-border-radius redColor border-0 rounded-1 m-1"  />
+                            <div class="w-25 d-flex flex-row justify-content-center align-items-center gap-3 border border-1 border-dark">
+                                <%--<asp:Button Style="background-color: #e43c5c" runat="server" ID="btnEdit" Text="Edit" OnClick="btnEdit_Click" class="w-25 text-white bx-border-radius redColor border-0 rounded-1 m-1"  />--%>
+                                <%--<button class="w-25 text-white bx-border-radius redColor border-0 rounded-1">--%>
+                                    <a class="w-25 text-white redColor border-0 rounded-1 px-3" href="EditPage.aspx?idb=<%#Eval("_bid") %>">Edit</a>
+                                <%--</button>--%>
                                 <asp:Button Style="background-color: #e43c5c" runat="server" ID="Button1" Text="Delete" class="w-25 text-white bx-border-radius redColor border-0 rounded-1 m-1" CommandArgument='<%#Eval("_bid")%>' CommandName="delBtnClick" OnClick="Button1_Click"/>
                             </div>
                         </div>

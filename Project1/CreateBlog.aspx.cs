@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,8 +33,13 @@ namespace Project1
             cmd.Connection = con;
             try
             {
-                string path = Server.MapPath("~/images/");
-                imgPlace.SaveAs(path + imgPlace.FileName);
+
+                string uploadsFolder = Server.MapPath("~/images");
+                string uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(imgPlace.FileName);
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                imgPlace.SaveAs(filePath);
+
                 con.Open();
                 cmd.Parameters.AddWithValue("@id", Session["id"]);
                 cmd.Parameters.AddWithValue("@place",txtname.Text);
@@ -42,7 +48,7 @@ namespace Project1
                 cmd.Parameters.AddWithValue("@city",txtCity.Text);
                 cmd.Parameters.AddWithValue("@tips", txttips.Text);
                 cmd.Parameters.AddWithValue("@maps", txtMaps.Text);
-                cmd.Parameters.AddWithValue("@img", imgPlace.FileName);
+                cmd.Parameters.AddWithValue("@img", uniqueFileName);
                 if(cmd.ExecuteNonQuery() > 0)
                 {
                     Response.Write("<script>alert('Blog created successfully')</script>");
@@ -55,7 +61,8 @@ namespace Project1
             catch(Exception ex) 
             {
                 Console.WriteLine(ex.Message);
-                Response.Write("<script>alert('Error occured while uploading')</script>");
+                Response.Write("<script>console.log("+ex.Message+")</script>");
+                Response.Write("<script>alert('Error occured while uploading ' + "+ex.Message+")</script>");
             }
             finally 
             { 

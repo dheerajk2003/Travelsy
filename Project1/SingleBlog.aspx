@@ -27,7 +27,7 @@
                <li class="d-inline-flex align-items-center m-1">
                     <asp:Panel ID="pnlLike" runat="server">
                         <asp:LinkButton ID="btnLike" runat="server" OnClick="btnLike_Click" >
-                            <i class="bi bi-heart"></i>
+                            
                         </asp:LinkButton>
                         <asp:Label ID="blogLikes" runat="server"></asp:Label>
                     </asp:Panel>

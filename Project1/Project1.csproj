@@ -165,6 +165,7 @@
     <Content Include="Comments.aspx" />
     <Content Include="SingleBlog.aspx" />
     <Content Include="Dashboard.aspx" />
+    <Content Include="EditPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPage.aspx.cs">
+      <DependentUpon>EditPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditPage.aspx.designer.cs">
+      <DependentUpon>EditPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

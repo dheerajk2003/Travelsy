@@ -31,16 +31,44 @@ namespace Project1
                 FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
                 myId = Convert.ToInt64(authTicket.Name);
                 bid = Request.QueryString["idb"];
-
                 loadBlogs();
                 loadName();
                 loadComments();
+                loadLikeIcon();
+                HttpContext.Current.ApplicationInstance.CompleteRequest();
             }
             catch 
             {
                 
             }
             //finally { con.Close(); }
+
+            void loadLikeIcon()
+            {
+                try
+                {
+                    con.Open();
+                    string getIconQuery = "select * from tblLikes where _bid = "+bid+" AND id = " + myId + " ";
+                    DataTable dataTable = new DataTable();
+                    SqlDataAdapter adpt = new SqlDataAdapter(getIconQuery, con);
+                    adpt.Fill(dataTable);
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                    con.Close();
+                    Response.Write(dataTable.Rows.Count);
+                    if(dataTable.Rows.Count > 0)
+                    {
+                        btnLike.Text = "<i class='bi bi-heart'></i>";
+                    }
+                    else
+                    {
+                        btnLike.Text = "<i class='bi bi-heart-fill'></i>";
+                    }
+
+                    //< i class="bi bi-heart"></i>
+                    //        <i class="bi bi-heart-fill"></i>
+                }
+                catch(Exception ex) { }
+            }
 
             void loadBlogs()
             {
@@ -151,11 +179,12 @@ namespace Project1
                 cmd = new SqlCommand(query, con);
                 int execLike = cmd.ExecuteNonQuery();
                 con.Close();
+                HttpContext.Current.ApplicationInstance.CompleteRequest();
                 //Response.Write("<script>alert('running main query'+" + execLike + ")</script>");
                 if (execLike > 0)
                 {
                     int likes = numLikes();
-                    //Response.Write("<script>alert("+likes+")</script>");
+                    //Response.Write("<script>alert(" + likes + ")</script>");
                     blogLikes.Text = likes.ToString();
                     updateLikes(likes);
                 }
@@ -167,10 +196,13 @@ namespace Project1
                         con.Open();
                         cmd = new SqlCommand(query4, con);
                         int delEx = cmd.ExecuteNonQuery();
+                        //Response.Write("<script>alert('executing delete query = "+delEx+"')</script>");
                         con.Close();
+                        HttpContext.Current.ApplicationInstance.CompleteRequest();
                         //Response.Write("<script>alert('executing delete query - '+" + delEx + ")</script>");
                         int nLikes = numLikes();
-                        //Response.Write("<script>alert('l - "+nLikes+"')</script>");
+                        //Response.Write("<script>alert('l - " + nLikes + "')</script>");
+                        blogLikes.Text = nLikes.ToString();
                         updateLikes(nLikes);
                     }
                     catch { }
@@ -184,6 +216,7 @@ namespace Project1
                         DataTable dt = new DataTable();
                         SqlDataAdapter adpt = new SqlDataAdapter(query2, con);
                         adpt.Fill(dt);
+                        HttpContext.Current.ApplicationInstance.CompleteRequest();
                         return dt.Rows.Count;
                     }
                     catch { return 0; }
@@ -199,6 +232,7 @@ namespace Project1
                         con.Open();
                         cmd = new SqlCommand(query3, con);
                         int isSuccess = cmd.ExecuteNonQuery();
+                        HttpContext.Current.ApplicationInstance.CompleteRequest();
                         //Response.Write("<script>alert('executing update query - '+" + isSuccess + ")</script>");
                         //if (isSuccess > 0)
                         //{
