@@ -70,6 +70,9 @@
           <div class="regloglink">
               <p>Not Registered yet? </p><a href="signup.aspx">register now</a>
           </div>
+          <div>
+              <a href="AdminLogin.aspx">Admin Login</a>
+          </div>
           <div class="text-center">
               <%--<button type="submit">Send Message</button>--%>
               <asp:Button ID="btnsubmit" runat="server" CssClass="btnsubmit" OnClick="btnsubmit_Click" style="background: #e43c5c;border: 0;padding: 10px 28px;color: #fff; transition: 0.4s;border-radius: 50px;" Text="Login" />

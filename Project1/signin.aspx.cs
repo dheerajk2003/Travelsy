@@ -64,18 +64,14 @@ namespace Project1
             try
             {
                 con.Open();
-                //adpt = new SqlDataAdapter(query, con);
                 cmd.Parameters.AddWithValue("@email", txtemail.Text);
                 adpt = new SqlDataAdapter(cmd);
                 adpt.Fill(dt);
                 if(dt.Rows.Count > 0)
                 {
                     string txtEncPass = dt.Rows[0]["_userpass"].ToString();
-                    //byte[] bytes = System.Convert.FromBase64String(txtEncPass);
-                    //string realpass = System.Text.Encoding.UTF8.GetString(bytes);
                     if(txtEncPass == txtPass.Text)
                     {
-                        //Session["login"] = Convert.ToInt32(dt.Rows[0]["_id"]);
                         Session["id"] = dt.Rows[0]["_id"].ToString();
                         WriteCk(Convert.ToInt16(dt.Rows[0]["_id"]));
                         Response.Redirect("blog.aspx");

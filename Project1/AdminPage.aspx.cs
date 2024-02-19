@@ -1,0 +1,90 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Project1
+{
+    public partial class AdminPage : System.Web.UI.Page
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ToString());
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                getDashData();
+            }
+        }
+
+        void getDashData()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand();
+                string query = "select * from tblPlaces order by _dateTime desc";
+                cmd.CommandText = query;
+                cmd.Connection = con;
+                cmd.CommandType = CommandType.Text;
+                rptMyBlogs.DataSource = cmd.ExecuteReader();
+                rptMyBlogs.DataBind();
+            }
+            catch (Exception ex) { }
+            finally { con.Close(); }
+            //Response.Write(_id);
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if (btn.CommandName == "delBtnClick")
+            {
+                Response.Write("<script>console.log(" + btn.CommandArgument.ToString() + ")</script>");
+                try
+                {
+                    string getImage = "select _img from tblPlaces where _bid = " + btn.CommandArgument.ToString() + " ";
+                    con.Open();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter adapter = new SqlDataAdapter(getImage, con);
+                    adapter.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        string path = Server.MapPath("~/images/");
+                        string delImg = String.Concat(path, dt.Rows[0][0]);
+                        System.IO.File.Delete(delImg);
+                    }
+                    con.Close();
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                    con.Open();
+                    string delQuery = "delete from tblPlaces where _bid = " + btn.CommandArgument.ToString() + " ";
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = delQuery;
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.Text;
+                    int result = cmd.ExecuteNonQuery();
+                    con.Close();
+                    Response.Write("<script>console.log(" + result + ")</script>");
+                    Response.Redirect(Request.Url.AbsoluteUri, false);
+                    HttpContext.Current.ApplicationInstance.CompleteRequest();
+                }
+                catch (Exception ex)
+                {
+
+                }
+            }
+        }
+    }
+}

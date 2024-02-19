@@ -20,6 +20,7 @@ namespace Project1
             Session["login"] = null;
             Session["id"] = null;
             Session["liked"] = null;
+            Session["Admin"] = null;
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
