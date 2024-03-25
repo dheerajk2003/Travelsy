@@ -7,7 +7,7 @@
         <div class="container mt-5">
 
             <div class="section-title">
-                <h3>Sign <span>In</span></h3>
+                <h3>Admin <span>Login</span></h3>
             </div>
 
             <div class="row w-full flex justify-content-center align-items-center">

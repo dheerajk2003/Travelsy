@@ -129,13 +129,13 @@
                 </ItemTemplate>
             </asp:Repeater>
 
-            <div class="blog-pagination">
+            <%--<div class="blog-pagination">
               <ul class="justify-content-center">
                 <li><a href="#">1</a></li>
                 <li class="active"><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
               </ul>
-            </div>
+            </div>--%>
 
           </div><!-- End blog entries list -->
 
@@ -163,7 +163,7 @@
                 <%--</form>--%>
               </div><!-- End sidebar search formn-->
 
-              <h3 class="sidebar-title">Categories</h3>
+              <%--<h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
                 <ul>
                   <li><a href="#">General <span>(25)</span></a></li>
@@ -173,9 +173,9 @@
                   <li><a href="#">Creative <span>(8)</span></a></li>
                   <li><a href="#">Educaion <span>(14)</span></a></li>
                 </ul>
-              </div><!-- End sidebar categories-->
+              </div>--%><!-- End sidebar categories-->
 
-              <h3 class="sidebar-title">Recent Posts</h3>
+              <%--<h3 class="sidebar-title">Recent Posts</h3>
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="assets/img/blog/blog-recent-1.jpg" alt="">
@@ -207,9 +207,9 @@
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
-              </div><!-- End sidebar recent posts-->
+              </div>--%><!-- End sidebar recent posts-->
 
-              <h3 class="sidebar-title">Tags</h3>
+              <%--<h3 class="sidebar-title">Tags</h3>
               <div class="sidebar-item tags">
                 <ul>
                   <li><a href="#">App</a></li>
@@ -224,7 +224,7 @@
                   <li><a href="#">Tips</a></li>
                   <li><a href="#">Marketing</a></li>
                 </ul>
-              </div><!-- End sidebar tags-->
+              </div>--%><!-- End sidebar tags-->
 
             </div><!-- End sidebar -->
 
