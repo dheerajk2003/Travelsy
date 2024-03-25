@@ -95,7 +95,7 @@
   </section><!-- End Services Section -->
 
   <!-- ======= Features Section ======= -->
-  <section id="features" class="features">
+  <%--<section id="features" class="features">
     <div class="container">
 
       <div class="row">
@@ -174,7 +174,7 @@
       </div>
 
     </div>
-  </section><!-- End Features Section -->
+  </section>--%><!-- End Features Section -->
 
   <!-- ======= Cta Section ======= -->
   <section id="cta" class="cta">
@@ -190,7 +190,7 @@
   </section><!-- End Cta Section -->
 
   <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
+  <%--<section id="portfolio" class="portfolio">
     <div class="container">
 
       <div class="section-title">
@@ -302,10 +302,10 @@
           </div>
         </div>--%>
 
-      </div>
+      <%--</div>
 
     </div>
-  </section><!-- End Portfolio Section -->
+  </section>--%>--%><!-- End Portfolio Section -->
 
   <!-- ======= Pricing Section ======= -->
   <%--<section id="pricing" class="pricing">
@@ -447,7 +447,7 @@
   </section>--%><!-- End F.A.Q Section -->
 
   <!-- ======= Team Section ======= -->
-  <section id="team" class="team">
+  <%--<section id="team" class="team">
     <div class="container">
 
       <div class="section-title">
@@ -471,7 +471,6 @@
             </div>
             <div class="member-info">
               <h4>Dheeraj Khatri</h4>
-              <%--<span>Chief Executive Officer</span>--%>
             </div>
           </div>
         </div>
@@ -489,7 +488,6 @@
             </div>
             <div class="member-info">
               <h4>Aryan Poonia</h4>
-              <%--<span>Product Manager</span>--%>
             </div>
           </div>
         </div>
@@ -507,7 +505,6 @@
             </div>
             <div class="member-info">
               <h4>Vidhan Mertiya</h4>
-              <%--<span>CTO</span>--%>
             </div>
           </div>
         </div>
@@ -525,7 +522,6 @@
             </div>
             <div class="member-info">
               <h4>Harsh Satoliya</h4>
-              <%--<span>Accountant</span>--%>
             </div>
           </div>
         </div>
@@ -533,7 +529,9 @@
       </div>
 
     </div>
-  </section><!-- End Team Section -->
+  </section>--%>
+    
+    <!-- End Team Section -->
 
   <!-- ======= Contact Section ======= -->
   <%--<section id="contact" class="contact">
